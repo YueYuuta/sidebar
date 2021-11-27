@@ -1,4 +1,4 @@
-<div class="sidebar" [class.close]="close">
+<div class="sidebar" [class.close]="!close">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
         <span class="logo_name">CodingLab</span>
@@ -13,7 +13,8 @@
                 <i *ngIf="side.SubMenu" class='bx bxs-chevron-down arrow' (click)="openCloseSubmenu(side.Nombre)"></i>
             </div>
             <ul *ngIf="side.SubMenu" class="sub-menu ">
-                <li *ngFor="let sub of side.SubMenu"><a [routerLink]="[sub.Ruta]">{{sub.Nombre}}</a></li>
+                <li *ngFor="let sub of side.SubMenu"><a class="pointer" (click)="navegar(sub.Ruta)">{{sub.Nombre}}</a>
+                </li>
             </ul>
         </li>
 

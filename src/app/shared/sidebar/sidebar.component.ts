@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SidebarModel } from 'src/app/models/sidebar.modal';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
@@ -9,12 +10,15 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class SidebarComponent implements OnInit {
   sidebar: SidebarModel[] = [];
-  close = false;
+  @Input() close;
   abierto = '';
-  constructor(private readonly _sidebarService: SidebarService) {}
+  constructor(
+    private readonly _sidebarService: SidebarService,
+    private readonly _router: Router
+  ) {}
   ngOnInit(): void {
     this.sidebar = this._sidebarService.obtenerMenu();
-    console.log('menu', this._sidebarService.obtenerMenu());
+    console.log('menu', this.close);
   }
 
   openCloseSubmenu(nombre: string): void {
@@ -25,5 +29,8 @@ export class SidebarComponent implements OnInit {
     }
 
     // this.closeSub = !this.closeSub;
+  }
+  navegar(ruta: string) {
+    this._router.navigateByUrl(ruta);
   }
 }

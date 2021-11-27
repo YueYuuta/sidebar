@@ -10,18 +10,21 @@ export class SidebarService {
   menu: SidebarModel[] = [
     { Nombre: 'Dashbard', Icono: 'bx bx-grid-alt' },
     {
-      Nombre: 'Categoria',
+      Nombre: 'Producto',
       Icono: 'bx bx-collection',
-      Ruta: `${ruta}/categoria`,
+
       SubMenu: [
-        { Nombre: 'HTML & CSS', Ruta: `${ruta}/categoria/crear-categoria` },
+        { Nombre: 'Lista', Ruta: `/paginas/producto/lista-producto` },
         { Nombre: 'JavaScript' },
       ],
     },
     {
-      Nombre: 'Post',
+      Nombre: 'Cliente',
       Icono: 'bx bx-pie-chart-alt-2',
-      SubMenu: [{ Nombre: 'Web Design' }, { Nombre: 'Login Form' }],
+      SubMenu: [
+        { Nombre: 'Lista', Ruta: '/paginas/cliente/lista-cliente' },
+        { Nombre: 'Login Form' },
+      ],
     },
   ];
 

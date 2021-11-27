@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin-top: 50px;
+}
 header {
   width: 100%;
-  height: 50px;
   background: #f5f5f5;
+  height: 50px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -17,6 +20,7 @@ header {
   justify-content: center;
   align-items: center;
   transform: translateX(10px);
+  /* background: blue; */
 }
 
 .icon__menu i {
@@ -27,4 +31,17 @@ header {
 
 .size__menu {
   margin-left: var(--with-side);
+  transition: 0.5s;
+}
+
+.size__menu_close {
+  margin-left: var(--with-side-close);
+  transition: 0.5s;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: 20px;
 }

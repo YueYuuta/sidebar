@@ -3,7 +3,9 @@
 
 :root {
   --with-side: 260px;
+  --with-side-close: 78px;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -15,13 +17,13 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 260px;
+  width: var(--with-side);
   background: #11101d;
   z-index: 100;
   transition: all 0.5s ease;
 }
 .sidebar.close {
-  width: 78px;
+  width: var(--with-side-close);
 }
 .sidebar .logo-details {
   height: 60px;

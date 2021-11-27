@@ -1,9 +1,9 @@
 <header>
     <div class="icon__menu">
-        <i class="bx bx-menu" id="btn_open"></i>
+        <i class="bx bx-menu" (click)="open()"></i>
     </div>
 </header>
-<app-sidebar></app-sidebar>
+<app-sidebar [close]="close"></app-sidebar>
 
 <!-- <section class="home-section">
     <div class="home-content">
@@ -12,5 +12,6 @@
     </div>
    
 </section> -->
-
-<router-outlet></router-outlet>
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
