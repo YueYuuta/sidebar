@@ -1,0 +1,35 @@
+<div class="sidebar" [class.close]="close">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <span class="logo_name">CodingLab</span>
+    </div>
+    <ul class="nav-links">
+        <li *ngFor="let side of sidebar" [class.showMenu]="abierto === side.Nombre">
+            <div class="iocn-link">
+                <a>
+                    <i class='{{side.Icono}}'></i>
+                    <span class="link_name">{{side.Nombre}}</span>
+                </a>
+                <i *ngIf="side.SubMenu" class='bx bxs-chevron-down arrow' (click)="openCloseSubmenu(side.Nombre)"></i>
+            </div>
+            <ul *ngIf="side.SubMenu" class="sub-menu ">
+                <li *ngFor="let sub of side.SubMenu"><a [routerLink]="[sub.Ruta]">{{sub.Nombre}}</a></li>
+            </ul>
+        </li>
+
+        <!-- class="link_name" -->
+        <!-- li de la foto -->
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="assets/image/profile.jpg" alt="profileImg">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">Prem Shahi</div>
+                    <div class="job">Web Desginer</div>
+                </div>
+                <i class='bx bx-log-out'></i>
+            </div>
+        </li>
+    </ul>
+</div>

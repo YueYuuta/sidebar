@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/theme/sidebar.css"
             ],
             "scripts": []
           },
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sidebar"
+    }
+  },
+  "defaultProject": "sidebar",
+  "cli": {
+    "analytics": false
+  }
 }
